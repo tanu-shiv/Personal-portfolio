@@ -27,10 +27,14 @@ SECRET_KEY = 'django-insecure-3tj#b*u^@yxuez@nw036s5zk%8t^%_l+2=*&n3!7(d1ek14$7k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['personal-portfolio-tanvi-0ce4.onrender.com', # Your Render service URL
+# settings.py
+
+ALLOWED_HOSTS = [
+    'personal-portfolio-tanvi-0ce4.onrender.com', # Your Render service URL
     'www.yourdomain.com', # If you have a custom domain
     'localhost', # For local testing if needed, though not for Render
-    '127.0.0.1', # For local testing if needed]
+    '127.0.0.1', # For local testing if needed
+]
 
 
 # Application definition

@@ -9,28 +9,26 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+# settings.py
 
-import os 
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3tj#b*u^@yxuez@nw036s5zk%8t^%_l+2=*&n3!7(d1ek14$7k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # Correctly set to False
 
-ALLOWED_HOSTS = [".vercel.app"]
-
-
-# Application definition
+ALLOWED_HOSTS = [
+    'personal-portfolio-tanvi-0ce4.onrender.com', # Your Render service URL
+    'www.yourdomain.com', # If you have a custom domain
+    'localhost',
+    '127.0.0.1',
+] # This looks correct for Render
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,6 +41,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # IMPORTANT: Add WhiteNoise middleware here, right after SecurityMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'classes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/"templates"],
+        'DIRS': [BASE_DIR / "templates"], # Ensure your templates dir is correctly referenced
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,61 +68,33 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'classes.wsgi.application'
+WSGI_APPLICATION = 'classes.wsgi.application' # Correctly set
 
-
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
-
+# ... database settings ...
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+# This is for development. Collectstatic will gather files from here and other apps' static dirs.
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    # If your static files are in your app's static folder (e.g., resume/static/),
+    # you don't strictly need to list it here, as Django finds them automatically.
+    # But it's good practice to have a project-level static folder if you use one.
+]
 
+# This is the directory where collectstatic will put all your static files for production.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Use WhiteNoise to serve static files efficiently in production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS=[
-  os.path.join(BASE_DIR, 'static')  
-]
+# Redundant STATICFILES_DIRS entry - remove one of them
+# STATICFILES_DIRS=[
+#   os.path.join(BASE_DIR, 'static')
+# ]

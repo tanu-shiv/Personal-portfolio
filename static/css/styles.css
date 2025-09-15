@@ -467,6 +467,97 @@ section {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.skills-bars {
+  flex: 1;
+  min-width: 280px; /* prevent bars from shrinking too much */
+}
+
+.skills-group {
+  display: none;
+}
+
+.skills-group.active {
+  display: block;
+}
+
+.skills-group p {
+  margin: 0.5rem 0;
+}
+
+.bar {
+  background: #333;
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  border-radius: 10px;
+}
+
+.skill-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  min-width: 280px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--shadow-light);
+}
+
+.skill-card:hover,
+.skill-card.active {
+  background: var(--t-yellow);
+  color: black;
+}
+
+.skill-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* -----------------------
+   📱 Responsive Styles
+-------------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills-bars {
+    width: 100%;
+  }
+
+  .skill-cards {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* ---------------------------------- */
 /* Projects Section                   */
@@ -959,5 +1050,17 @@ footer p {
     text-align: left;
   }
 }
-    
+@media (max-width: 576px) {
+  .skill-cards {
+    grid-template-columns: 1fr; /* stack cards */
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+  .skills-bars {
+    text-align: left;
+  }
+}   
 }

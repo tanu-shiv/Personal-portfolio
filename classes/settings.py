@@ -86,7 +86,7 @@ STATICFILES_DIRS = [
 ]
 
 # This is the directory where collectstatic will put all your static files for production.
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Use WhiteNoise to serve static files efficiently in production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

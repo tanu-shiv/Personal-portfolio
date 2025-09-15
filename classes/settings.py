@@ -31,9 +31,12 @@ ALLOWED_HOSTS = [
 ] # This looks correct for Render
 
 INSTALLED_APPS = [
-    # ... other apps
-    'django.contrib.staticfiles', # Make sure this is included
-    'resume' # Your app
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles','resume'
 ]
 
 MIDDLEWARE = [

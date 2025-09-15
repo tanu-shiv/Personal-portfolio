@@ -114,6 +114,7 @@ p {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    list-style: none;
 }
 
 #navbar a {
@@ -144,9 +145,8 @@ p {
     background: var(--gradient-2);
     border-radius: 5px;
 }
-
-#navbar .right-nav {
-    list-style-type: none; /* Removes the dots */
+.flex{
+    list-style: none;
 }
 
 .checkBtn {
@@ -207,7 +207,7 @@ section {
 }
 
 /* Add margin to separate sections */
-#services, #about, #skills, #projects, #publications, #contact {
+#services, #about, #skills, #projects, #publications, #public, #clubs, #contact {
     margin-top: 4rem;
 }
 
@@ -402,6 +402,71 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(0, 255, 194, 0.3);
 }
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.skills-bars {
+  flex: 1;
+}
+
+.skills-group {
+  display: none;
+}
+
+.skills-group.active {
+  display: block;
+}
+
+.skills-group p {
+  margin: 0.5rem 0;
+}
+
+.bar {
+  background: #333;
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  border-radius: 10px;
+}
+
+.skill-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--shadow-light);
+}
+
+.skill-card:hover,
+.skill-card.active {
+  background: var(--t-yellow);
+  color: black;
+}
+
+.skill-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
 /* ---------------------------------- */
 /* Projects Section                   */
@@ -440,8 +505,7 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
 }
-/* 
-.project-image {
+/* .project-image {
     width: 100%;
     height: 150px;
     background: #1A0A2E; /* Placeholder background 
@@ -493,15 +557,14 @@ section {
 }
 
 /* ---------------------------------- */
-/* Publications Section               */
+/* Academic and Professional Journey Section */
 /* ---------------------------------- */
 #publications {
     gap: 3rem;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 2.5rem;
-    box-shadow: var(--shadow-light);
-    background: var(--card-bg);
+    /* Removed border, border-radius, box-shadow, background */
+    padding: 2.5rem 1rem; /* Adjust padding as needed */
+    margin: 0 auto; /* Center the section */
+    margin-top: 4rem; /* Ensure consistent spacing */
 }
 
 #publications .publications-content {
@@ -569,6 +632,142 @@ section {
 .publications-item p {
     font-size: 1rem;
     margin-top: 0.25rem;
+}
+
+/* Public Section (Publications) */
+#public {
+    padding: 2.5rem 1rem; /* No border box for the section itself */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+#public .public-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+#public .public-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start for better layout */
+    gap: 3rem;
+}
+
+.public-image-container {
+    width: 40%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.public-image-container .public-image {
+    width: 100%; /* Make image responsive within its container */
+    max-width: 300px; /* Max width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Adjust as needed, less rounded for a gif */
+    object-fit: contain; /* Adjust as needed */
+    background: var(--gradient-2);
+    padding: 5px;
+    box-shadow: 0 0 25px var(--neon-aqua-start);
+}
+
+.public-cards-container {
+    width: 60%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.public-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.public-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+.public-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.public-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Clubs Section */
+#clubs {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    padding: 2.5rem;
+}
+
+#clubs .clubs-header {
+    margin-bottom: 2rem;
+}
+
+.clubs-content {
+    gap: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.clubs-item {
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    align-items: flex-start; /* Align logo and text to the top */
+    transition: transform 0.3s ease;
+    flex-direction: row; /* Set to row to align logo and text side-by-side */
+    flex: 1 1 calc(50% - 1rem); /* Make cards responsive */
+    min-width: 300px;
+}
+
+.clubs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 194, 0.2);
+}
+
+.clubs-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--gradient-1);
+    padding: 3px;
+    flex-shrink: 0;
+}
+
+.clubs-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--dark-bg);
+}
+
+.clubs-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.clubs-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 /* ---------------------------------- */
@@ -641,7 +840,7 @@ footer p {
 }
 
 /* ---------------------------------- */
-/* Responsive Design                  */
+/* Responsive Design */
 /* ---------------------------------- */
 @media screen and (max-width: 768px) {
     #navbar {
@@ -649,7 +848,7 @@ footer p {
     }
 
     #navbar .right-nav {
-        display: none;
+        display: none; /* Initially hide the menu on mobile */
         width: 100%;
         position: absolute;
         top: 100%;
@@ -672,15 +871,20 @@ footer p {
     }
 
     .checkBtn {
-        display: block;
+        display: block; /* Show the hamburger button on mobile */
         color: var(--text-light);
         font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #check {
+        display: none;
     }
 
     #check:checked ~ .right-nav {
-        display: flex;
+        display: flex; /* Show the menu when the checkbox is checked */
     }
-    
+
     section {
         padding: 3rem 1rem;
     }
@@ -689,41 +893,71 @@ footer p {
         flex-direction: column;
         text-align: center;
     }
-    
+
     #home .home-right {
         margin-top: 2rem;
     }
-    
+
     #about .about-left {
         order: 2;
     }
 
     #about .about-right {
         order: 1;
-        padding: 1.5rem; /* Adjust padding for smaller screens */
     }
 
-    .skills-grid {
+    #public .public-content {
         flex-direction: column;
     }
-    
-    .publications-content {
+
+    .public-image-container, .public-cards-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .public-image-container {
+        order: 1;
+    }
+
+    .public-cards-container {
+        order: 2;
+    }
+
+    .clubs-item {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
+    @media (max-width: 992px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills-bars {
+    width: 100%;
+  }
+
+  .skill-cards {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .skill-cards {
+    grid-template-columns: 1fr; /* stack cards */
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+  .skills-bars {
+    text-align: left;
+  }
+}
     
-    .publications-column::before {
-        left: 0;
-    }
-    
-    .publications-item {
-        margin-left: 1.5rem;
-    }
-    
-    .publications-item::before {
-        left: -15px;
-    }
-    
-    #publications {
-        padding: 1.5rem; /* Adjust padding for smaller screens */
-    }
 }

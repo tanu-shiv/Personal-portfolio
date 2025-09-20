@@ -1,440 +1,233 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvi Shivani's Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.jpeg' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/static.css' %}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanvi Shivani | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/your-fontawesome-key.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav id="navbar" class="flex s-between items-center">
+    <h2 class="gradient-text">Tanvi</h2>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkBtn"><i class="fas fa-bars"></i></label>
+    <ul class="right-nav flex">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#public">Public</a></li>
+      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <nav id="navbar" class="flex s-between items-center">
-        <div class="left-nav">
-        </div>
-        <div class="right-nav">
-            <ul class="flex">
-                <li><a href="#home" class="roboto active">Home</a></li>
-                <li><a href="#about" class="roboto">About</a></li>
-                <li><a href="#skills" class="roboto">Skills</a></li>
-                <li><a href="#projects" class="roboto">Projects</a></li>
-                <li><a href="#publications" class="roboto">Education and work</a></li>
-                <li><a href="#publications">Education and work</a></li>
-                <li><a href="#public">Publications</a></li>
-                <li><a href="#contact" class="roboto">Contact</a></li>
-            </ul>
-        </div>
-        <label for="check" class="checkBtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <input type="checkbox" id="check">
-    </nav>
-
-    <section id="home" class="flex s-around items-center">
-        <div class="home-left flex f-col items-start">
-            <div class="home-content">
-                <h2 class="t-black">Hi! I'm <span class="t-yellow">Tanvi Shivani</span> -</h2>
-                <h1 class="t-black">Python Designer</h1>
-                <p class="t-gray">Python Developer with 1+ years of experience, skilled in building efficient, scalable solutions. Passionate about problem-solving, machine learning, and creating impactful applications</p>
-                <div class="contact-info flex f-col">
-                    <p>Email: <span class="t-black">stanu0220@gmail.com</span></p>
-                    <p>Github: <a href="https://github.com/tanu-shiv" target="_blank"><span class="t-black">https://github.com/tanu-shiv</span></p></a>
-                </div>
-                <div class="flex btn-container">
-                    <a href="{% static 'pdf/resume_portfolio.pdf' %}" target="_blank">
-                        <button class="btn black">Download CV</button>
-                    </a>
-                    <a class="btn yellow poppins" href="#contact">Hire Me Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="home-right flex s-center items-center">
-            <div class="img-container">
-                <img src="{% static 'images/me.jpeg' %}" alt="A professional portrait of Tanvi Shivani, a Python Developer">
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="flex s-around items-center">
-        <div class="service-card flex items-center">
-            <i class="fas fa-laptop-code"></i>
-            <div class="service-info">
-                <h4>Web Development</h4>
-                <p>Building responsive websites</p>
-            </div>
-            </div>
-        <div class="service-card flex items-center">
-            <i class="fab fa-python"></i>
-            <div class="service-info">
-                <h4>Python Development</h4>
-                <p>Backend and script automation</p>
-            </div>
-            </div>
-        <div class="service-card flex items-center">
-            <i class="fas fa-chart-line"></i>
-            <div class="service-info">
-                <h4>Data Analysis</h4>
-                <p>Data visualization with Power BI</p>
-            </div>
-            </div>
-    </section>
-
-    <section id="about" class="flex s-around items-center">
-        <div class="about-left flex s-center items-center">
-            <div class="img-container">
-                <img src="{% static 'images/about_gif.gif' %}" alt="An illustration of a dog, representing Tanvi's personality">
-            </div>
-        </div>
-        <div class="about-right flex f-col">
-            <div class="about-content">
-                <h3 class="t-black">I can Build It!<br></h3>
-                <p class="t-gray">Software Engineer and Python Developer with expertise in building scalable applications, solving complex problems, and crafting intelligent solutions. From backend systems to machine learning models, I bring code to life with precision and creativity. Every project I work on isn’t just about writing clean and efficient code—it’s about creating smart, impactful, and future-ready solutions that make a difference.</p>
-                <p class="follow-me t-black">You Can Follow Me Also Here:</p>
-                <div class="social-icons flex">
-                    <a href="https://www.linkedin.com/in/tanvi-shivani-k-62106b21b/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/tanu-shiv"><i class="fab fa-github"></i></a>
-                    <a href=""><i class="fab fa-"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section id="skills" class="flex f-col items-center">
-        <div class="skills-header flex f-col items-center">
-            <h3 class="t-gray">What My Design</h3>
-            <h2 class="t-black">Skills Included</h2>
-            <p class="t-gray">These are the words we live by in everything we do. Every design we craft and every solution we build, we make sure we create must not only look beautiful.</p>
-        </div>
-        <div class="skills-grid flex s-around">
-            <div class="skills-left">
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">DSA - Problem Solving</p>
-                        <p class="t-black">75%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Python</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Pyspark</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">HTML</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">CSS</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Django</p>
-                        <p class="t-black">75%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Power BI</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Machine Learning</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-right flex f-col">
-                <div class="skill-card flex f-col items-center">
-                    <i class="fas fa-brain"></i>
-                    <h4>Machine Learning</h4>
-                </div>
-                <div class="skill-card flex f-col items-center">
-                    <i class="fas fa-code"></i>
-                    <h4>Web Development</h4>
-                </div>
-                <div class="skill-card flex f-col items-center">
-                    <i class="fas fa-database"></i>
-                    <h4>Database Mgmt.</h4>
-                </div>
-                <div class="skill-card flex f-col items-center">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h4>Problem Solving</h4>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <section id="skills">
-  <h2 class="t-yellow">Skills Included</h2>
-  <p>These are the words we live by in everything we do. Every design we craft and every solution we build, we make sure we create must not only look beautiful.</p>
-
-  <div class="skills-container">
-    <!-- Left: Skill Bars -->
-    <div class="skills-bars">
-      <!-- Machine Learning -->
-      <div class="skills-group" id="ml">
-        <p>Python <span>90%</span></p>
-        <div class="bar"><span style="width:90%"></span></div>
-
-        <p>PySpark <span>70%</span></p>
-        <div class="bar"><span style="width:70%"></span></div>
-
-        <p>Machine Learning <span>70%</span></p>
-        <div class="bar"><span style="width:70%"></span></div>
-      </div>
-
-      <!-- Web Development -->
-      <div class="skills-group" id="web">
-        <p>HTML <span>90%</span></p>
-        <div class="bar"><span style="width:90%"></span></div>
-
-        <p>CSS <span>90%</span></p>
-        <div class="bar"><span style="width:90%"></span></div>
-
-        <p>Django <span>75%</span></p>
-        <div class="bar"><span style="width:75%"></span></div>
-      </div>
-
-      <!-- Database -->
-      <div class="skills-group" id="db">
-        <p>MySQL <span>85%</span></p>
-        <div class="bar"><span style="width:85%"></span></div>
-
-        <p>PostgreSQL <span>75%</span></p>
-        <div class="bar"><span style="width:75%"></span></div>
-
-        <p>MongoDB <span>70%</span></p>
-        <div class="bar"><span style="width:70%"></span></div>
-      </div>
-
-      <!-- Problem Solving -->
-      <div class="skills-group" id="ps">
-        <p>DSA - Problem Solving <span>75%</span></p>
-        <div class="bar"><span style="width:75%"></span></div>
-
-        <p>Competitive Coding <span>70%</span></p>
-        <div class="bar"><span style="width:70%"></span></div>
+  <!-- Home -->
+  <section id="home" class="flex s-between items-center">
+    <div class="home-left">
+      <h1>Hi, I'm <span class="gradient-text">Tanvi Shivani</span></h1>
+      <h2 class="t-yellow">Python Developer | ML Enthusiast</h2>
+      <p>I design and build scalable applications and love solving real-world problems with code.</p>
+      <a href="#contact" class="btn yellow">Hire Me</a>
+    </div>
+    <div class="home-right">
+      <div class="img-container">
+        <img src="assets/profile.jpg" alt="Tanvi's photo">
       </div>
     </div>
+  </section>
 
-    <!-- Right: Skill Cards -->
-    <div class="skill-cards">
-      <div class="skill-card" data-skill="ml">
-        <i class="fas fa-brain"></i>
-        <h3>Machine Learning</h3>
-      </div>
-      <div class="skill-card" data-skill="web">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-      </div>
-      <div class="skill-card" data-skill="db">
-        <i class="fas fa-database"></i>
-        <h3>Database Mgmt.</h3>
-      </div>
-      <div class="skill-card" data-skill="ps">
-        <i class="fas fa-puzzle-piece"></i>
-        <h3>Problem Solving</h3>
+  <!-- Services -->
+  <section id="services" class="flex s-center">
+    <div class="service-card flex f-col items-center">
+      <i class="fas fa-code"></i>
+      <h3>Web Development</h3>
+      <p>Building responsive and performant applications using Python, Django, and modern web technologies.</p>
+    </div>
+    <div class="service-card flex f-col items-center">
+      <i class="fas fa-brain"></i>
+      <h3>Machine Learning</h3>
+      <p>Creating ML models that provide intelligent, data-driven insights and automation.</p>
+    </div>
+    <div class="service-card flex f-col items-center">
+      <i class="fas fa-database"></i>
+      <h3>Data Solutions</h3>
+      <p>Designing efficient databases and pipelines with SQL, Pandas, and PySpark.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="flex items-center">
+    <div class="about-left">
+      <div class="img-container">
+        <img src="assets/about.jpg" alt="About Tanvi">
       </div>
     </div>
-  </div>
-</section>
-
-    <section id="projects">
-        <div class="projects-header flex s-between items-center">
-            <h2 class="my-2 t-black">My Latest <span class="t-yellow">Projects</span></h2>
-            <a href="{% url 'projects' %}" class="view-all-btn flex items-center">
-                View All Projects
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag ui-ux">Python</span>
-                        <span class="tag app">NLP</span>
-                        <span class="tag wireframe">Pyaudio</span>
-                        <span class="tag wireframe">Indic NLP</span>
-                        <span class="tag wireframe">Machine Translation</span>
-                    </div>
-                    <h3 class="t-black">Speech-to-Text and Translation system for Indian Regional Languages</h3>
-                    <a href="#" class="view-details-icon">
-                        <i class="fas fa-arrow-right-circle"></i>
-                    </a>
-                    <a href="https://github.com/tanu-shiv/Translation-system-for-Indian-languages" class="btn yellow poppins">View on Github</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag ui-ux">Machine Learning</span>
-                        <span class="tag ui-ux">Deep Learning</span>
-                        <span class="tag wireframe">Cybersecurity</span>
-                        
-                    </div>
-                    <h3 class="t-black">Phishing and Malicious URL detection using Machine learning techniques</h3>
-                    <a href="#" class="view-details-icon">
-                        <i class="fas fa-arrow-right-circle"></i>
-                    </a>
-                    <a href="#" class="btn yellow poppins">View on Github</a>
-                </div>
-            </div>
-
-            </div>
-    </section>
-    <!-- Publications Section -->
-<section id="publications" class="section">
-    <div class="container">
-        <h2 class="section-title">Publications</h2>
-        <div class="publications-list">
-            <div class="publication-card">
-                <h3>Research Paper Title</h3>
-                <p class="t-black">Published in XYZ Journal, 2025</p>
-                <a href="your-paper-link.pdf" target="_blank" class="btn">View Paper</a>
-            </div>
-            <div class="publication-card">
-                <h3>Another Publication</h3>
-                <p class="t-black">Conference / Journal Name</p>
-                <a href="#" class="btn">View Paper</a>
-            </div>
-        </div>
+    <div class="about-right">
+      <h2 class="gradient-text">About Me</h2>
+      <p>I’m a passionate developer who enjoys coding, problem solving, and contributing to impactful projects.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Clubs Section -->
-<section id="clubs" class="section">
-    <div class="container">
-        <h2 class="section-title">Clubs & Activities</h2>
-        <div class="clubs-grid">
-            <div class="club-card">
-                <h3>Coding Club</h3>
-                <p class="t-black">Active Member, contributed in coding challenges and hackathons.</p>
-            </div>
-            <div class="club-card">
-                <h3>AI/ML Club</h3>
-                <p class="t-black">Worked on projects and research discussions in artificial intelligence.</p>
-            </div>
-            <div class="club-card">
-                <h3>Literary Club</h3>
-                <p class="t-black">Participated in writing competitions and debates.</p>
-            </div>
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="gradient-text">My Skills</h2>
+    <div class="skills-container">
+      <div class="skills-bars">
+        <div class="skills-group active">
+          <p>HTML</p>
+          <div class="bar"><span style="width:90%"></span></div>
+          <p>CSS</p>
+          <div class="bar"><span style="width:90%"></span></div>
+          <p>Python (Django)</p>
+          <div class="bar"><span style="width:75%"></span></div>
+          <p>Power BI</p>
+          <div class="bar"><span style="width:70%"></span></div>
+          <p>Machine Learning</p>
+          <div class="bar"><span style="width:70%"></span></div>
         </div>
+      </div>
+      <div class="skill-cards">
+        <div class="skill-card flex f-col items-center">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Web Development</h4>
+        </div>
+        <div class="skill-card flex f-col items-center">
+          <i class="fas fa-cogs"></i>
+          <h4>Problem Solving</h4>
+        </div>
+        <div class="skill-card flex f-col items-center">
+          <i class="fas fa-database"></i>
+          <h4>Database Mgmt.</h4>
+        </div>
+        <div class="skill-card flex f-col items-center">
+          <i class="fas fa-cloud"></i>
+          <h4>Cloud</h4>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-    <section id="publications">
-        <div class="publications-header">
-            <p class="t-gray">_ Education & Work</p>
-            <h2 class="t-black">My <span class="t-yellow">Academic and<br>Professional</span> Journey</h2>
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="gradient-text">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio built with HTML, CSS, and Django.</p>
+      </div>
+      <div class="project-card">
+        <h3>ML Classifier</h3>
+        <p>Machine learning project for predictive modeling and analytics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="flex f-col">
+    <h2 class="gradient-text">Academic & Professional Journey</h2>
+    <div class="publications-content flex">
+      <div class="publications-column">
+        <div class="publications-item">
+          <h3>Paper Title 1</h3>
+          <p>Brief description about research publication or academic achievement.</p>
         </div>
-        <div class="publications-content flex">
-            <div class="publications-column">
-                <div class="column-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Education</h3>
-                </div>
-                <div class="publications-item">
-                    <h4>2020 - 2024</h4>
-                    <h3>Geethanjali College of Engineering and Technology</h3>
-                    <p>Bachelor of Technology in Computer Science</p>
-                </div>
-                <div class="publications-item">
-                    <h4>2018 - 2020</h4>
-                    <h3>Vijaya Ratna Junior College</h3>
-                    <p>MPC</p>
-                </div>
-            </div>
-            <div class="publications-column">
-                <div class="column-icon">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Work Experience</h3>
-                </div>
-                <div class="publications-item">
-                    <h4>2024 - Present</h4>
-                    <h3>Accenture</h3>
-                    <p>Packaged App Developer</p>
-                </div>
-                <div class="publications-item">
-                    <h4>2016 - 2018</h4>
-                    <h3>Self-Employed</h3>
-                    <p>Senior Visual Arts</p>
-                </div>
-            </div>
+        <div class="publications-item">
+          <h3>Paper Title 2</h3>
+          <p>Another key milestone in your professional journey.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer id="contact" class="flex f-col s-center items-center">
-        <h2 class="t-black">Contact Me</h2>
-        <div class="form-container">
-            <form method="post" action="{% url 'contact' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="name" class="t-gray">Your Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="t-gray">Email Address</label>
-                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="number" class="t-gray">Phone Number</label>
-                    <input type="phone" name="number" id="number" placeholder="Enter Your Phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="content" class="t-gray">Your Message</label>
-                    <textarea name="content" id="textarea" cols="30" rows="5" placeholder="Enter Messages"></textarea>
-                </div>
-                <button type="submit" class="btn black" id="submit">Send Message</button>
-            </form>
+  <!-- Public Section -->
+  <section id="public">
+    <div class="public-header">
+      <h2 class="gradient-text">Public Contributions</h2>
+    </div>
+    <div class="public-content">
+      <div class="public-image-container">
+        <img src="assets/contribution.gif" alt="Contribution GIF" class="public-image">
+      </div>
+      <div class="public-cards-container">
+        <div class="public-item">
+          <div class="public-info">
+            <h3>Open Source Contribution</h3>
+            <p>Contributed to Python libraries and Django plugins.</p>
+          </div>
         </div>
-        <div class="social-icons flex">
-            <a href="https://www.linkedin.com/in/tanvi-shivani-k-62106b21b/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/tanu-shiv"><i class="fab fa-github"></i></a>
-
+        <div class="public-item">
+          <div class="public-info">
+            <h3>Community Work</h3>
+            <p>Mentored juniors and participated in coding clubs.</p>
+          </div>
         </div>
-        <p class="t-gray">© All Rights Reserved - Tanvi Shivani</p>
-    </footer>
+      </div>
+    </div>
+  </section>
 
+  <!-- Clubs -->
+  <section id="clubs">
+    <div class="clubs-header">
+      <h2 class="gradient-text">Clubs & Associations</h2>
+    </div>
+    <div class="clubs-content flex">
+      <div class="clubs-item flex">
+        <div class="clubs-logo">
+          <img src="assets/club1.png" alt="Club logo">
+        </div>
+        <div class="clubs-info">
+          <h3>Tech Club</h3>
+          <p>Worked as a core member organizing coding hackathons and events.</p>
+        </div>
+      </div>
+      <div class="clubs-item flex">
+        <div class="clubs-logo">
+          <img src="assets/club2.png" alt="Club logo">
+        </div>
+        <div class="clubs-info">
+          <h3>AI Club</h3>
+          <p>Collaborated on AI research and development sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact -->
+  <footer id="contact" class="flex f-col items-center">
+    <h2>Contact Me</h2>
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn yellow">Send</button>
+      </form>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Tanvi Shivani. All rights reserved.</p>
+  </footer>
 </body>
 </html>

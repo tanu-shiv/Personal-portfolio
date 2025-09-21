@@ -80,9 +80,7 @@
             </div>
 
             <!-- RIGHT PROGRESS BARS -->
-            <div class="skills-right" id="skills-bars">
-                <!-- Default will show all skills -->
-            </div>
+            <div class="skills-right" id="skills-bars"></div>
         </div>
     </section>
 
@@ -119,12 +117,25 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (Django Form) -->
     <section id="contact">
         <h2 class="t-black">Contact</h2>
-        <p class="t-gray">Feel free to reach me via email or LinkedIn.</p>
+        <form method="post" class="contact-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
     </section>
 
+    <!-- SKILLS SCRIPT -->
     <script>
         const skillsData = {
             ml: [

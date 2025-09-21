@@ -1,181 +1,388 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvi Shivani | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <title>Tanvi Shivani's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.jpeg' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="https://kit.fontawesome.com/4e5a72c756.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkBtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <div class="left-nav">
-            <h2 class="logo">Tanvi</h2>
-        </div>
+<body>
+    <nav id="navbar" class="flex s-between items-center">
+        <div class="left-nav"> </div>
         <div class="right-nav">
-            <ul>
-                <li><a href="#home" class="roboto">Home</a></li>
+            <ul class="flex">
+                <li><a href="#home" class="roboto active">Home</a></li>
                 <li><a href="#about" class="roboto">About</a></li>
                 <li><a href="#skills" class="roboto">Skills</a></li>
                 <li><a href="#projects" class="roboto">Projects</a></li>
-                <li><a href="#education" class="roboto">Education & Work</a></li>
-                <li><a href="#research" class="roboto">Publications</a></li>
+                <li><a href="#publications" class="roboto">Education and work</a></li>
+                <li><a href="#public" class="roboto">Publications</a></li>
                 <li><a href="#clubs" class="roboto">Clubs</a></li>
                 <li><a href="#contact" class="roboto">Contact</a></li>
             </ul>
-        </div>
+        </div> <label for="check" class="checkBtn"> <i class="fas fa-bars"></i> </label> <input type="checkbox"
+            id="check">
     </nav>
 
-    <!-- HOME -->
-    <section id="home">
-        <div class="home-text">
-            <h1>Hello, I’m <span>Tanvi Shivani</span></h1>
-            <p>A passionate developer and learner.</p>
+    <section id="home" class="flex s-around items-center">
+        <div class="home-left flex f-col items-start">
+            <div class="home-content">
+                <h2 class="t-black">Hi! I'm <span class="t-yellow">Tanvi Shivani</span> -</h2>
+                <h3>A Passionate <span class="typing" id="typing"></span></h3>
+                <p class="t-gray">Python Developer with 1+ years of experience, skilled in building efficient, scalable
+                    solutions. Passionate about problem-solving, machine learning, and creating impactful applications
+                </p>
+                <div class="contact-info flex f-col">
+                    <p>Email: <span class="t-black">stanu0220@gmail.com</span></p>
+                    <p>Github: <a href="https://github.com/tanu-shiv" target="_blank"><span
+                                class="t-black">https://github.com/tanu-shiv</span></p></a>
+                </div>
+                <div class="flex btn-container"> <a href="{% static 'pdf/resume_portfolio.pdf' %}" target="_blank">
+                        <button class="btn black">Download CV</button> </a> <a class="btn yellow poppins"
+                        href="#contact">Hire Me Now</a> </div>
+            </div>
+        </div>
+        <div class="home-right flex s-center items-center">
+            <div class="img-container"> <img src="{% static 'images/me.jpeg' %}"
+                    alt="A professional portrait of Tanvi Shivani, a Python Developer"> </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <h2 class="t-black">About Me</h2>
-        <p class="t-gray">
-            I’m an aspiring software developer with skills in Python, Django, Machine Learning, and more.
-        </p>
+    <section id="services" class="flex s-around items-center">
+        <div class="service-card flex items-center"> <i class="fas fa-laptop-code"></i>
+            <div class="service-info">
+                <h4>Web Development</h4>
+                <p>Building responsive websites</p>
+            </div>
+        </div>
+        <div class="service-card flex items-center"> <i class="fab fa-python"></i>
+            <div class="service-info">
+                <h4>Python Development</h4>
+                <p>Backend and script automation</p>
+            </div>
+        </div>
+        <div class="service-card flex items-center"> <i class="fas fa-chart-line"></i>
+            <div class="service-info">
+                <h4>Data Analysis</h4>
+                <p>Data visualization with Power BI</p>
+            </div>
+        </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2 class="t-black">Skills Included</h2>
-        <p class="t-gray">
-            These are the words we live by in everything we do. Every design we craft and every solution we build, we make sure we create must not only look beautiful.
-        </p>
+    <section id="about" class="flex s-around items-center">
+        <div class="about-left flex s-center items-center">
+            <div class="img-container"> <img src="{% static 'images/cartoon2.jpg' %}"
+                    alt="An illustration of a dog, representing Tanvi's personality"> </div>
+        </div>
+        <div class="about-right flex f-col">
+            <div class="about-content">
+                <h3 class="t-black">I can Build It!<br></h3>
+                <p class="t-gray">Software Engineer and Python Developer with expertise in building scalable
+                    applications, solving complex problems, and crafting intelligent solutions. From backend systems to
+                    machine learning models, I bring code to life with precision and creativity. Every project I work on
+                    isn’t just about writing clean and efficient code—it’s about creating smart, impactful, and
+                    future-ready solutions that make a difference.</p>
+                <p class="follow-me t-black">You Can Follow Me Also Here:</p>
+                <div class="social-icons flex"> <a href="https://www.linkedin.com/in/tanvi-shivani-k-62106b21b/"><i
+                            class="fab fa-linkedin-in"></i></a> <a href="https://github.com/tanu-shiv"><i
+                            class="fab fa-github"></i></a> <a href=""><i class="fab fa-"></i></a> </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="skills-container">
-            <!-- LEFT SKILL CARDS -->
+    <!-- SKILLS: (keeps your original items and layout) -->
+    <section id="skills" class="flex f-col items-center">
+        <div class="skills-header flex f-col items-center">
+            <h3 class="t-gray">What My Design</h3>
+            <h2 class="t-black">Skills Included</h2>
+            <p class="t-gray">These are the words we live by in everything we do. Every design we craft and every
+                solution we build, we make sure we create must not only look beautiful.</p>
+        </div>
+        <div class="skills-grid flex s-around">
             <div class="skills-left">
-                <div class="skill-card" onclick="showSkills('ml')">
-                    <i class="fas fa-brain"></i>
+                <!-- added data-cat so JS can filter (values: ml, web, db, ps) -->
+                <div class="skill-item" data-cat="ps">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">DSA - Problem Solving</p>
+                        <p class="t-black">75%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="ml web">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">Python</p>
+                        <p class="t-black">90%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="ml">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">Pyspark</p>
+                        <p class="t-black">70%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="web">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">HTML</p>
+                        <p class="t-black">90%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="web">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">CSS</p>
+                        <p class="t-black">90%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="web">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">Django</p>
+                        <p class="t-black">75%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="ml">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">Power BI</p>
+                        <p class="t-black">70%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-cat="ml">
+                    <div class="skill-label flex s-between items-center">
+                        <p class="t-black">Machine Learning</p>
+                        <p class="t-black">70%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-right flex f-col">
+                <!-- skill cards now include data-cat for filtering; original icons preserved -->
+                <div class="skill-card flex f-col items-center" data-cat="ml"> <i class="fas fa-brain"></i>
                     <h4>Machine Learning</h4>
                 </div>
-                <div class="skill-card" onclick="showSkills('web')">
-                    <i class="fas fa-code"></i>
+                <div class="skill-card flex f-col items-center" data-cat="web"> <i class="fas fa-code"></i>
                     <h4>Web Development</h4>
                 </div>
-                <div class="skill-card" onclick="showSkills('db')">
-                    <i class="fas fa-database"></i>
+                <div class="skill-card flex f-col items-center" data-cat="db"> <i class="fas fa-database"></i>
                     <h4>Database Mgmt.</h4>
                 </div>
-                <div class="skill-card" onclick="showSkills('ps')">
-                    <i class="fas fa-puzzle-piece"></i>
+                <div class="skill-card flex f-col items-center" data-cat="ps"> <i class="fas fa-puzzle-piece"></i>
                     <h4>Problem Solving</h4>
                 </div>
             </div>
-
-            <!-- RIGHT PROGRESS BARS -->
-            <div class="skills-right" id="skills-bars"></div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
-        <h2 class="t-black">Projects</h2>
-        <p class="t-gray">Some of my highlighted work...</p>
+        <div class="projects-header flex s-between items-center">
+            <h2 class="my-2 t-black">My Latest <span class="t-yellow">Projects</span></h2> <a
+                href="{% url 'projects' %}" class="view-all-btn flex items-center"> View All Projects <i
+                    class="fas fa-arrow-right"></i> </a>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <div class="project-tags"> <span class="tag ui-ux">Python</span> <span class="tag app">NLP</span>
+                        <span class="tag wireframe">Pyaudio</span> <span class="tag wireframe">Indic NLP</span> <span
+                            class="tag wireframe">Machine Translation</span> </div>
+                    <h3 class="t-black">Speech-to-Text and Translation system for Indian Regional Languages</h3> <a
+                        href="#" class="view-details-icon"> <i class="fas fa-arrow-right-circle"></i> </a> <a
+                        href="https://github.com/tanu-shiv/Translation-system-for-Indian-languages"
+                        class="btn yellow poppins">View on Github</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <div class="project-tags"> <span class="tag ui-ux">Machine Learning</span> <span
+                            class="tag ui-ux">Deep Learning</span> <span class="tag wireframe">Cybersecurity</span>
+                    </div>
+                    <h3 class="t-black">Phishing and Malicious URL detection using Machine learning techniques</h3> <a
+                        href="#" class="view-details-icon"> <i class="fas fa-arrow-right-circle"></i> </a> <a href="#"
+                        class="btn yellow poppins">View on Github</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-        <h2 class="t-black">Education & Work</h2>
-        <p class="t-gray">My academic and professional journey.</p>
+    <!-- EDUCATION & WORK (original publications section kept) -->
+    <section id="publications">
+        <div class="publications-header">
+            <h2 class="t-black">My <span class="t-yellow">Academic and<br>Professional</span> Journey</h2>
+        </div>
+        <div class="publications-content flex">
+            <div class="publications-column">
+                <div class="column-icon"> <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                </div>
+                <div class="publications-item">
+                    <h4>2020 - 2024</h4>
+                    <h3>Geethanjali College of Engineering and Technology</h3>
+                    <p>Bachelor of Technology in Computer Science</p>
+                </div>
+                <div class="publications-item">
+                    <h4>2018 - 2020</h4>
+                    <h3>Vijaya Ratna Junior College</h3>
+                    <p>MPC</p>
+                </div>
+            </div>
+            <div class="publications-column">
+                <div class="column-icon"> <i class="fas fa-briefcase"></i>
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="publications-item">
+                    <h4>2024 - Present</h4>
+                    <h3>Accenture</h3>
+                    <p>Packaged App Developer</p>
+                </div>
+                <div class="publications-item">
+                    <h4>2016 - 2018</h4>
+                    <h3>Self-Employed</h3>
+                    <p>Senior Visual Arts</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="research">
-        <h2 class="t-black">Publications</h2>
-        <p class="t-gray">📄 Paper: “Your Paper Title Here” – Published in XYZ Journal, 2025.</p>
+    <!-- NEW: Publications (paper) — not boxed, plain text as you asked -->
+    <section id="public" class="flex f-col items-center">
+        <div class="publication-paper">
+            <h2 class="t-black">Selected Publication</h2>
+            <p class="t-gray">“Paper Title Goes Here” — Journal / Conference name, Year. Short one-line description
+                (if you want a link, replace text with an <a href="https://example.com" target="_blank">external link</a>).</p>
+        </div>
     </section>
 
-    <!-- CLUBS -->
-    <section id="clubs">
+    <!-- NEW: Clubs section with cards (logo + details below) -->
+    <section id="clubs" class="flex f-col items-center">
         <h2 class="t-black">Clubs & Activities</h2>
-        <div class="club-container">
+        <div class="club-container flex s-around">
             <div class="club-card">
                 <img src="{% static 'images/club1.png' %}" alt="Club 1 Logo">
-                <p>Member of Coding Club – Organized coding contests and workshops.</p>
+                <h4>Coding Club</h4>
+                <p class="t-gray">Organized coding contests, workshops and peer code reviews.</p>
             </div>
             <div class="club-card">
                 <img src="{% static 'images/club2.png' %}" alt="Club 2 Logo">
-                <p>Active member of Data Science Society – Worked on ML projects.</p>
+                <h4>Data Science Society</h4>
+                <p class="t-gray">Worked on ML projects and conducted study groups and hackathons.</p>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT (Django Form) -->
-    <section id="contact">
-        <h2 class="t-black">Contact</h2>
-        <form method="post" class="contact-form">
-            {% csrf_token %}
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-    </section>
+    <!-- Footer / Contact (Django contact form EXACT as original - unchanged) -->
+    <footer id="contact" class="flex f-col s-center items-center">
+        <h2 class="t-black">Contact Me</h2>
+        <div class="form-container">
+            <form method="post" action="{% url 'contact' %}"> {% csrf_token %} <div class="form-group"> <label
+                        for="name" class="t-gray">Your Name</label> <input type="text" name="name" id="name"
+                        placeholder="Enter Your Name"> </div>
+                <div class="form-group"> <label for="email" class="t-gray">Email Address</label> <input type="email"
+                        name="email" id="email" placeholder="Enter Your Email" required> </div>
+                <div class="form-group"> <label for="number" class="t-gray">Phone Number</label> <input type="phone"
+                        name="number" id="number" placeholder="Enter Your Phone" required> </div>
+                <div class="form-group"> <label for="content" class="t-gray">Your Message</label> <textarea
+                        name="content" id="textarea" cols="30" rows="5" placeholder="Enter Messages"></textarea> </div>
+                <button type="submit" class="btn black" id="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="social-icons flex"> <a href="https://www.linkedin.com/in/tanvi-shivani-k-62106b21b/"><i
+                    class="fab fa-linkedin-in"></i></a> <a href="https://github.com/tanu-shiv"><i
+                    class="fab fa-github"></i></a> </div>
+        <p class="t-gray">© All Rights Reserved - Tanvi Shivani</p>
+    </footer>
 
-    <!-- SKILLS SCRIPT -->
+    <!-- Typing Effect Script (unchanged) -->
     <script>
-        const skillsData = {
-            ml: [
-                { name: "Python", value: 90 },
-                { name: "PySpark", value: 70 },
-                { name: "Machine Learning", value: 70 },
-                { name: "Power BI", value: 70 }
-            ],
-            web: [
-                { name: "Django", value: 75 },
-                { name: "HTML", value: 90 },
-                { name: "CSS", value: 90 }
-            ],
-            db: [
-                { name: "Database Mgmt.", value: 80 }
-            ],
-            ps: [
-                { name: "DSA - Problem Solving", value: 75 }
-            ]
-        };
+        const phrases = ["Python Developer", "Web Designer", "Coder", "Data Analyst"];
+        const typingElement = document.getElementById("typing");
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let currentPhrase = "";
+        let isDeleting = false;
 
-        function showSkills(category) {
-            const container = document.getElementById("skills-bars");
-            container.innerHTML = "";
-            skillsData[category].forEach(skill => {
-                container.innerHTML += `
-                    <div class="bar">
-                        <h3>${skill.name}</h3>
-                        <span>${skill.value}%</span>
-                        <div class="base-bar">
-                            <div class="progress-bar" style="width:${skill.value}%;"></div>
-                        </div>
-                    </div>
-                `;
-            });
+        function typeEffect() {
+            currentPhrase = phrases[phraseIndex];
+            if (!isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, letterIndex + 1);
+                letterIndex++;
+                if (letterIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, letterIndex - 1);
+                letterIndex--;
+                if (letterIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
         }
-
-        // Default load ML skills
-        document.addEventListener("DOMContentLoaded", () => showSkills('ml'));
+        typeEffect();
     </script>
 
+    <!-- NEW: Skill filter script (non-destructive) -->
+    <script>
+        // Filter skill-items by reading data-cat attributes.
+        document.addEventListener("DOMContentLoaded", function () {
+            const skillCards = document.querySelectorAll('.skills-right .skill-card');
+            const skillItems = document.querySelectorAll('.skills-left .skill-item');
+
+            skillCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const cat = card.dataset.cat; // 'ml' | 'web' | 'db' | 'ps'
+
+                    if (card.classList.contains('active')) {
+                        // if already active -> reset (show all)
+                        card.classList.remove('active');
+                        skillItems.forEach(item => item.classList.remove('hidden'));
+                    } else {
+                        // activate this card, deactivate others
+                        skillCards.forEach(c => c.classList.remove('active'));
+                        card.classList.add('active');
+
+                        // show only matching skill items
+                        skillItems.forEach(item => {
+                            const cats = item.dataset.cat ? item.dataset.cat.split(' ') : [];
+                            if (cats.includes(cat)) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

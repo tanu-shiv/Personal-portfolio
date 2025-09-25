@@ -681,30 +681,58 @@ footer p {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
-
+/* CLUBS */
 .club-container {
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .club-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 1rem;
-    width: 240px;
-    border-radius: 12px;
+    background: #1a0f29;
+    padding: 25px 20px;
+    border-radius: 16px;
+    width: 280px;
     text-align: center;
-    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
 .club-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent);
+}
+
+.club-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.club-card h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.club-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-gray);
+    text-align: justify;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    background: #2b1a3d;
 }
 
 /* ---------------------------------- */

@@ -839,3 +839,109 @@ footer p {
         max-width: 420px;
     }
 }
+/* Publications Section */
+#publications {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+#publications h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.publication-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.pub-title {
+  font-size: 1.4rem;
+  color: #ff79c6;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pub-details {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.pub-details .pub-year {
+  color: #50fa7b;
+  font-weight: 500;
+}
+
+.pub-desc {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.pub-link {
+  font-size: 0.95rem;
+  color: #8be9fd;
+  text-decoration: none;
+  border-bottom: 1px dashed #8be9fd;
+  transition: color 0.3s;
+}
+
+.pub-link:hover {
+  color: #50fa7b;
+  border-bottom-color: #50fa7b;
+}
+
+/* 🔹 Responsive Tweaks */
+@media (max-width: 768px) {
+  #publications h2 {
+    font-size: 1.6rem;
+  }
+
+  .pub-title {
+    font-size: 1.2rem;
+  }
+
+  .pub-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #publications {
+    padding: 40px 15px;
+  }
+
+  .publication-card {
+    padding: 15px;
+  }
+
+  .pub-title {
+    font-size: 1.1rem;
+  }
+
+  .pub-desc {
+    font-size: 0.85rem;
+  }
+}
+

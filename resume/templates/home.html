@@ -97,107 +97,173 @@
     </section>
 
     <!-- SKILLS: (keeps your original items and layout) -->
-    <section id="skills" class="flex f-col items-center">
-        <div class="skills-header flex f-col items-center">
-            <h3 class="t-gray">What My Design</h3>
-            <h2 class="t-black">Skills Included</h2>
-            <p class="t-gray">These are the words we live by in everything we do. Every design we craft and every
-                solution we build, we make sure we create must not only look beautiful.</p>
-        </div>
-        <div class="skills-grid flex s-around">
-            <div class="skills-left">
-                <!-- added data-cat so JS can filter (values: ml, web, db, ps) -->
-                <div class="skill-item" data-cat="ps">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">DSA - Problem Solving</p>
-                        <p class="t-black">75%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
+    <!-- SKILLS: Fully Organized -->
+<section id="skills" class="flex f-col items-center">
+    <div class="skills-header flex f-col items-center">
+        <h3 class="t-gray">What My Design</h3>
+        <h2 class="t-black">Skills Included</h2>
+        <p class="t-gray">
+            These are the words we live by in everything we do. Every design we craft and every solution we build, we make sure we create must not only look beautiful.
+        </p>
+    </div>
+
+    <div class="skills-grid flex s-around">
+        <div class="skills-left">
+            <!-- Problem Solving -->
+            <div class="skill-item" data-cat="ps">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">DSA - Problem Solving</p>
+                    <p class="t-black">75%</p>
                 </div>
-                <div class="skill-item" data-cat="ml web">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Python</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 75%;"></div>
                 </div>
-                <div class="skill-item" data-cat="ml">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Pyspark</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
+            </div>
+            <div class="skill-item" data-cat="ps">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Algorithms</p>
+                    <p class="t-black">80%</p>
                 </div>
-                <div class="skill-item" data-cat="web">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">HTML</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
-                <div class="skill-item" data-cat="web">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">CSS</p>
-                        <p class="t-black">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
+            </div>
+            <div class="skill-item" data-cat="ps">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Data Structures</p>
+                    <p class="t-black">85%</p>
                 </div>
-                <div class="skill-item" data-cat="web">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Django</p>
-                        <p class="t-black">75%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 85%;"></div>
                 </div>
-                <div class="skill-item" data-cat="ml">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Power BI</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
+            </div>
+            <div class="skill-item" data-cat="ps">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Coding Logic</p>
+                    <p class="t-black">80%</p>
                 </div>
-                <div class="skill-item" data-cat="ml">
-                    <div class="skill-label flex s-between items-center">
-                        <p class="t-black">Machine Learning</p>
-                        <p class="t-black">70%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
             </div>
 
-            <div class="skills-right flex f-col">
-                <!-- skill cards now include data-cat for filtering; original icons preserved -->
-                <div class="skill-card flex f-col items-center" data-cat="ml"> <i class="fas fa-brain"></i>
-                    <h4>Machine Learning</h4>
+            <!-- Web Development -->
+            <div class="skill-item" data-cat="web">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">HTML</p>
+                    <p class="t-black">90%</p>
                 </div>
-                <div class="skill-card flex f-col items-center" data-cat="web"> <i class="fas fa-code"></i>
-                    <h4>Web Development</h4>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 90%;"></div>
                 </div>
-                <div class="skill-card flex f-col items-center" data-cat="db"> <i class="fas fa-database"></i>
-                    <h4>Database Mgmt.</h4>
+            </div>
+            <div class="skill-item" data-cat="web">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">CSS</p>
+                    <p class="t-black">90%</p>
                 </div>
-                <div class="skill-card flex f-col items-center" data-cat="ps"> <i class="fas fa-puzzle-piece"></i>
-                    <h4>Problem Solving</h4>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="web">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">JavaScript</p>
+                    <p class="t-black">80%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="web">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Django</p>
+                    <p class="t-black">75%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <!-- Machine Learning & Data Analytics -->
+            <div class="skill-item" data-cat="ml">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Python</p>
+                    <p class="t-black">90%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="ml">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">PySpark</p>
+                    <p class="t-black">70%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="ml">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Machine Learning</p>
+                    <p class="t-black">70%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="ml">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">Power BI</p>
+                    <p class="t-black">75%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <!-- Database -->
+            <div class="skill-item" data-cat="db">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">SQL</p>
+                    <p class="t-black">80%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-cat="db">
+                <div class="skill-label flex s-between items-center">
+                    <p class="t-black">SQLite</p>
+                    <p class="t-black">70%</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 70%;"></div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Skill Cards (Right) -->
+        <div class="skills-right flex f-col">
+            <div class="skill-card flex f-col items-center" data-cat="ml">
+                <i class="fas fa-brain"></i>
+                <h4>Machine Learning</h4>
+            </div>
+            <div class="skill-card flex f-col items-center" data-cat="web">
+                <i class="fas fa-code"></i>
+                <h4>Web Development</h4>
+            </div>
+            <div class="skill-card flex f-col items-center" data-cat="db">
+                <i class="fas fa-database"></i>
+                <h4>Database Mgmt.</h4>
+            </div>
+            <div class="skill-card flex f-col items-center" data-cat="ps">
+                <i class="fas fa-puzzle-piece"></i>
+                <h4>Problem Solving</h4>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="projects">
         <div class="projects-header flex s-between items-center">

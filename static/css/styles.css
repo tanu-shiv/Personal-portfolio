@@ -522,6 +522,66 @@ section {
   .pub-title { font-size: 1.1rem; }
   .pub-desc { font-size: 0.85rem; }
 }
+/* ---------------- Journey Section ---------------- */
+#journey {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.journey-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  text-align: left;
+}
+
+.journey-box {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+}
+
+.journey-box i {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.journey-box h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.journey-item {
+  margin-bottom: 1.5rem;
+}
+
+.journey-item .time {
+  display: block;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.journey-item h4 {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.journey-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
 
 /* ---------------------------------- */
 /* Projects Section */

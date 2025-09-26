@@ -447,61 +447,53 @@
     </script>
 
     <!-- NEW: Skill filter script (non-destructive) -->
-    <script>
-        // Filter skill-items by reading data-cat attributes.
-        document.addEventListener("DOMContentLoaded", function () {
-            const skillCards = document.querySelectorAll('.skills-right .skill-card');
-            const skillItems = document.querySelectorAll('.skills-left .skill-item');
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const skillCards = document.querySelectorAll('.skills-right .skill-card');
+    const skillItems = document.querySelectorAll('.skills-left .skill-item');
 
-            skillCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const cat = card.dataset.cat; // 'ml' | 'web' | 'db' | 'ps'
-
-                    if (card.classList.contains('active')) {
-                        // if already active -> reset (show all)
-                        card.classList.remove('active');
-                        skillItems.forEach(item => item.classList.remove('hidden'));
-                    } else {
-                        // activate this card, deactivate others
-                        skillCards.forEach(c => c.classList.remove('active'));
-                        card.classList.add('active');
-
-                        // show only matching skill items
-                        skillItems.forEach(item => {
-                            const cats = item.dataset.cat ? item.dataset.cat.split(' ') : [];
-                            if (cats.includes(cat)) {
-                                item.classList.remove('hidden');
-                            } else {
-                                item.classList.add('hidden');
-                            }
-                        });
-                    }
-                });
-            });
+    // Function to filter skills by category
+    function filterSkills(cat) {
+        skillItems.forEach(item => {
+            const cats = item.dataset.cat ? item.dataset.cat.split(' ') : [];
+            if (cat === 'all' || cats.includes(cat)) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
         });
-    </script>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const allSkills = document.querySelectorAll(".skill-item");
-    
-    // Hide everything first
-    allSkills.forEach(skill => {
-        skill.style.display = "none";
-    });
+    }
 
-    // Show only Machine Learning skills
-    allSkills.forEach(skill => {
-        if(skill.dataset.cat.includes("ml")) {
-            skill.style.display = "block";
-        }
-    });
+    // Set ML as default active
+    const defaultCard = document.querySelector('.skill-card[data-cat="ml"]');
+    if(defaultCard) {
+        defaultCard.classList.add('active');
+        filterSkills('ml');
+    }
 
-    // Optional: highlight the ML card as selected
-    const allCards = document.querySelectorAll(".skill-card");
-    allCards.forEach(card => card.classList.remove("active"));
-    document.querySelector('.skill-card[data-cat="ml"]').classList.add("active");
+    // Add click event to all skill cards
+    skillCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const cat = card.dataset.cat;
+
+            if (card.classList.contains('active')) {
+                // if already active -> reset (show all)
+                card.classList.remove('active');
+                filterSkills('all');
+            } else {
+                // activate this card, deactivate others
+                skillCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                filterSkills(cat);
+            }
+        });
+    });
 });
 </script>
+
+
+   
+
 
 </body>
 

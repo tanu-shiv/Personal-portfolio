@@ -363,9 +363,7 @@ section {
     text-shadow: 0 0 10px var(--neon-pink-start);
 }
 
-/* ---------------------------------- */
-/* Skills Section */
-/* ---------------------------------- */
+/* ---------------- Skills Section ---------------- */
 #skills .skills-grid {
     width: 100%;
     gap: 3rem;
@@ -393,8 +391,16 @@ section {
 .skill-bar .progress {
     height: 100%;
     background: var(--gradient-1);
-    transition: width 0.5s ease;
+    /* 🔹 Fixed width stays consistent */
+    transition: none;   /* remove animation flicker */
 }
+
+/* Ensure bars stay same size even after filter click */
+.skill-item[data-skill="html"] .progress { width: 90%; }
+.skill-item[data-skill="css"] .progress { width: 90%; }
+.skill-item[data-skill="django"] .progress { width: 75%; }
+.skill-item[data-skill="powerbi"] .progress { width: 70%; }
+.skill-item[data-skill="ml"] .progress { width: 70%; }
 
 .skills-right {
     display: grid;
@@ -414,16 +420,95 @@ section {
     box-shadow: var(--shadow-light);
 }
 
-.skill-card i {
-    font-size: 2.5rem;
+/* ---------------- Publications Unified ---------------- */
+#publications {
+    padding: 60px 20px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    margin-top: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+}
+
+#publications h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
     background: var(--gradient-2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.skill-card:hover {
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.publication-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 255, 194, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.pub-title {
+    font-size: 1.4rem;
+    color: #ff79c6;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.pub-details {
+    font-size: 0.95rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.pub-details .pub-year {
+    color: #50fa7b;
+    font-weight: 500;
+}
+
+.pub-desc {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.pub-link {
+    font-size: 0.95rem;
+    color: #8be9fd;
+    text-decoration: none;
+    border-bottom: 1px dashed #8be9fd;
+    transition: color 0.3s;
+}
+
+.pub-link:hover {
+    color: #50fa7b;
+    border-bottom-color: #50fa7b;
+}
+
+/* 🔹 Responsive Tweaks */
+@media (max-width: 768px) {
+  #publications h2 { font-size: 1.6rem; }
+  .pub-title { font-size: 1.2rem; }
+  .pub-desc { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  #publications { padding: 40px 15px; }
+  .publication-card { padding: 15px; }
+  .pub-title { font-size: 1.1rem; }
+  .pub-desc { font-size: 0.85rem; }
 }
 
 /* ---------------------------------- */
@@ -510,84 +595,6 @@ section {
     text-shadow: 0 0 10px var(--neon-aqua-start);
 }
 
-/* ---------------------------------- */
-/* Publications (Education & Work) */
-/* ---------------------------------- */
-#publications {
-    gap: 3rem;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 2.5rem;
-    box-shadow: var(--shadow-light);
-    background: var(--card-bg);
-}
-
-#publications .publications-content {
-    width: 100%;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.publications-column {
-    flex-grow: 1;
-    min-width: 300px;
-    position: relative;
-}
-
-.publications-column::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border-color);
-}
-
-.column-icon {
-    margin-bottom: 2rem;
-}
-
-.column-icon i {
-    font-size: 2.5rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-right: 1rem;
-}
-
-.publications-item {
-    margin-left: 3rem;
-    padding-bottom: 2rem;
-    position: relative;
-}
-
-.publications-item::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: var(--gradient-1);
-    border: 3px solid var(--dark-bg);
-}
-
-.publications-item h4 {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-muted);
-}
-
-.publications-item h3 {
-    font-size: 1.25rem;
-    color: var(--text-light);
-}
-
-.publications-item p {
-    font-size: 1rem;
-    margin-top: 0.25rem;
-}
 
 /* ---------------------------------- */
 /* Footer and Contact Form */

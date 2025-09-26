@@ -186,7 +186,7 @@
             </div>
 
             <!-- Machine Learning & Data Analytics -->
-            <div class="skill-item" data-cat="ml">
+            <div class="skill-item" data-cat="ml-default">
                 <div class="skill-label flex s-between items-center">
                     <p class="t-black">Python</p>
                     <p class="t-black">90%</p>
@@ -480,6 +480,29 @@
             });
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const allSkills = document.querySelectorAll(".skill-item");
+    
+    // Hide everything first
+    allSkills.forEach(skill => {
+        skill.style.display = "none";
+    });
+
+    // Show only Machine Learning skills
+    allSkills.forEach(skill => {
+        if(skill.dataset.cat.includes("ml")) {
+            skill.style.display = "block";
+        }
+    });
+
+    // Optional: highlight the ML card as selected
+    const allCards = document.querySelectorAll(".skill-card");
+    allCards.forEach(card => card.classList.remove("active"));
+    document.querySelector('.skill-card[data-cat="ml"]').classList.add("active");
+});
+</script>
+
 </body>
 
 </html>

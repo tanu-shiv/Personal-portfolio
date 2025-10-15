@@ -540,11 +540,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Set ML as default active
+    // Set dev as default active
     const defaultCard = document.querySelector('.skill-card[data-cat="dev"]');
     if(defaultCard) {
         defaultCard.classList.add('active');
-        filterSkills('ml');
+        filterSkills('dev');
     }
 
     // Add click event to all skill cards
